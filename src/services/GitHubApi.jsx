@@ -3,7 +3,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const gitHubApi = createApi({
   reducerPath: "gitHub",
   baseQuery: fetchBaseQuery({
-    baseUrl: "GET - https://api.github.com",
+    baseUrl: "https://api.github.com",
+    headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
   }),
   endpoints: (builder) => ({
     getUsers: builder.query({
