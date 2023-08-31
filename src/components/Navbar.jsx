@@ -13,7 +13,7 @@ export default function Navbar({value, setValue}) {
       <input
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="w-[30%] rounded-full py-2 pl-5 text-black"
+        className="w-[50%] lg:w-[30%] rounded-full py-2 pl-5 text-black"
         type="text"
         placeholder="Search by username to get details..."
       />
