@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import DetailsCard from "./components/DetailsCard";
 
 export default function App() {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("jayeshtele");
 
   return (
     <div className="text-white">
