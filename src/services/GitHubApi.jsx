@@ -4,9 +4,6 @@ export const gitHubApi = createApi({
   reducerPath: "gitHub",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://api.github.com",
-    headers: {
-        'X-GitHub-Api-Version': '2022-11-28'
-      }
   }),
   endpoints: (builder) => ({
     getUsers: builder.query({
