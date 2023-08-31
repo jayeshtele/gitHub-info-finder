@@ -1,5 +1,7 @@
 import React from "react";
 import { useGetUsersQuery } from "../services/GitHubApi";
+import Error from "./Error";
+import Loader from "./Loader";
 
 export default function DetailsCard({ value }) {
   const { data, isFetching, error } = useGetUsersQuery(value);
@@ -10,8 +12,15 @@ export default function DetailsCard({ value }) {
   const month = String(date.getUTCMonth() + 1).padStart(2, "0");
   const day = String(date.getUTCDate()).padStart(2, "0");
   const formattedDate = `${year}-${month}-${day}`;
-  if (isFetching) return "loading...";
-  if (error) return "Something went wrong";
+
+  if (isFetching) return <Loader />;
+
+  if (value === "") {
+    return <Error message="Not Found" />;
+  } else if (error) return <Error message={error?.data?.message} />;
+
+  console.log(error?.data?.message);
+
   return (
     <div className="mt-5 flex flex-col items-center justify-center">
       <div className="card rounded-xl border-[5px] border-[#010409] p-10">
@@ -28,7 +37,9 @@ export default function DetailsCard({ value }) {
         <p className="my-1 text-lg">
           No. of public gists - {data?.public_gists}
         </p>
-        <p className="text-lg">Profile created at - {`${formattedDate}`}</p>
+        <p className="text-lg">
+          Profile created at - {`${data?.created_at ? formattedDate : ""}`}
+        </p>
       </div>
     </div>
   );

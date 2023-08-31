@@ -3,7 +3,7 @@ import { Vortex } from "react-loader-spinner";
 
 export default function Loader() {
   return (
-    <div className="w-screen md:w-[70%] lg:[75%] xl:w-[82%] h-screen flex items-center justify-center">
+    <div className="w-screen h-[88vh] flex items-center justify-center">
       <Vortex
         visible={true}
         height="80"
