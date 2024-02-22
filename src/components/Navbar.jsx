@@ -10,7 +10,7 @@ export default function Navbar({ value, setValue }) {
         </figure>
         <p className="ml-5">{value}</p>
       </div>
-      <div className="flex w-[50%] space-x-1 rounded-full bg-white py-2 px-3 text-black lg:w-[30%]">
+      <div className="flex w-[50%] space-x-1 rounded-full bg-white px-3 py-2 text-black lg:w-[30%]">
         <SearchIcon className="text-gray-700" />
         <input
           value={value}
